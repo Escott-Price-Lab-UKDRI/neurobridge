@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7ff124df-c97d-44e2-b51a-6617a80ad61d"
+  <img src="https://github.com/user-attachments/assets/a4b71c06-9193-440b-aad4-29231eb2e2c1"
        alt="nf-core-neurobridge_logo_light"
        width="1600">
 </p>

@@ -39,7 +39,7 @@
 
 ### Download reference data 
 
-=> Zenodo link...
+[`Zenodo`]([https://www.nextflow.io/](https://doi.org/10.5281/zenodo.18986935))
 
 ---
 

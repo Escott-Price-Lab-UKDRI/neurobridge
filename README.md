@@ -142,6 +142,8 @@ git clone https://github.com/guillermocomesanacimadevila/neurobridge.git
 cd neurobridge/
 ```
 
+4. Run end-to-end!
+
 ```bash
 nextflow run main.nf \
   -profile docker \
@@ -153,24 +155,15 @@ nextflow run main.nf \
 
 ---
 
+** Note ** 
+
+> You can also run each [`Workflow/`] individually within [`Workflow/neurobridge`]
+
 ```bash
-nextflow run main.nf \
+nextflow run main<method>.nf \
   -profile docker \
   -c conf/local/nextflow.config \
   --input assets/gwas.tsv \
   --pairs assets/ldsc_pairs.tsv \
   --outdir results -resume
-```
-
----
-
-```bash
-nextflow run workflows/neurobridge/main_sumher.nf \
-  -profile docker \
-  -c conf/local/nextflow.config \
-  --input assets/gwas.tsv \
-  --pairs assets/ldsc_pairs.tsv \
-  --outdir results \
-  --ldak_os ldak6.1.linux \
-  -resume
 ```

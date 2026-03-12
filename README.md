@@ -97,35 +97,6 @@ nextflow run main.nf \
 
 ---
 
-## Fine-mapping requirements 
-
-1. Install [`FINEMAP`](http://www.christianbenner.com)
-
-2. Move `finemap_v*.tgz` to `ref/`
-
-```bash
-mkdir -p neurobridge/cont/finemap
-```
-
-```bash
-mv ~/finemap_v*.tgz neurobridge/cont/finemap
-```
-
-3. Unpack!
-
-```bash
-cd cont/finemap/
-tar -xzf finemap_v1.4.2_MacOSX.tgz --strip-components=1 
-```
-
-4. *IMPORTANT* -> remove .tgz file
-
-```bash
-rm -rf /cont/finemap/*.tgz
-```
-
----
-
 ## Get Started!
 
 1. Install [`Nextflow`](https://www.nextflow.io/) `(>=25.10.0)`

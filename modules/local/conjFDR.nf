@@ -41,6 +41,7 @@ process CONJFDR {
     tuple val(meta), path(harmonised_tsv)
     path conjfdr_r
     path conjfdr_refdir
+    val ref_bfile
 
     output:
     tuple val(meta), path("${meta.trait1}_${meta.trait2}_cfdr_results.tsv"), emit: cfdr_results
@@ -59,7 +60,7 @@ process CONJFDR {
     fi
 
     export PLINK="plink"
-    export REF_BFILE="${params.conjfdr_ref_bfile}"
+    export REF_BFILE="${ref_bfile}"
 
     "\$RBIN" "${conjfdr_r}" \\
         "${harmonised_tsv}" \\

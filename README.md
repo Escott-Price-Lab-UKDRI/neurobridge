@@ -24,10 +24,12 @@
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB)]() 
 [![R](https://img.shields.io/badge/R-4.4%2B-276DC3)]() 
-[![Run with Conda](https://img.shields.io/badge/Run%20with-Conda-44A833)]() 
-[![Nextflow DSL2](https://img.shields.io/badge/Nextflow-DSL2-23aa62)](https://www.nextflow.io/) 
-[![Docker](https://img.shields.io/badge/Container-Docker-2496ED)](https://www.docker.com/) 
-[![Reference](https://img.shields.io/badge/Docs-auto--generated-green)](zenodo)
+[![Nextflow](https://img.shields.io/badge/version-%E2%89%A525.04.0-green?style=flat&logo=nextflow&logoColor=white&color=%230DC09D&link=https%3A%2F%2Fnextflow.io)](https://www.nextflow.io/)
+[![nf-core template version](https://img.shields.io/badge/nf--core_template-3.5.2-green?style=flat&logo=nfcore&logoColor=white&color=%2324B064&link=https%3A%2F%2Fnf-co.re)](https://github.com/nf-core/tools/releases/tag/3.5.2)
+[![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
+[![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
+[![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
+[![Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.18986935-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.18986935)
 
 ---
 
@@ -43,7 +45,7 @@
 
 ## Steps
 
-### Download reference data from Zenodo
+### Download reference data!
 
 > Download **[here](https://doi.org/10.5281/zenodo.18986935)** 
 
@@ -71,35 +73,23 @@ nextflow run main.nf \
   --pairs assets/ldsc_pairs.tsv \
   --outdir results
 ```
+> [!WARNING]
+> Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_; see [docs](https://nf-co.re/docs/usage/getting_started/configuration#custom-configuration-files).
 
 ---
 
 ## Tools
-
-**Heritability & Genetic Correlation**
 
 - **[LDSC](https://github.com/bulik/ldsc)** – Linkage Disequilibrium Score Regression  
 - **[SumHer](https://github.com/zietzm/sumher_rs)** – Summary-based Heritability Estimation  
 - **[HDL / HDL-L](https://github.com/zhenin/HDL)** – High-Definition Likelihood (global and local)  
 - **[MiXeR](https://github.com/precimed/mixer)** – Mixture of Regressions  
 - **[LAVA](https://github.com/josefin-werme/LAVA)** – Local analysis of genetic covariance  
-
-**Cross-trait Enrichment (Pleiotropy)**
-
 - **[condFDR / conjFDR](https://github.com/alexploner/cfdr.pleio)** – Conditional / conjunctional false discovery rate  
-
-**GWAS Processing & Gene-level Analysis**
-
 - **[PLINK 2.0](https://www.cog-genomics.org/plink/2.0/)** – Whole-genome association analysis toolkit  
 - **[MAGMA](https://ctg.cncr.nl/software/magma)** – Gene-level and pathway enrichment analysis  
-
-**Fine-mapping & Colocalisation**
-
 - **[COLOC](https://cran.r-project.org/web/packages/coloc/)** – Bayesian colocalisation analysis  
 - **[SuSiE](https://github.com/stephenslab/susieR)** – Bayesian fine-mapping and credible set estimation  
-
-**Functional Annotation & QTL Integration**
-
 - **[FUMA](https://fuma.ctglab.nl/)** – Functional mapping and annotation of GWAS loci  
 - **[SMR + HEIDI](https://yanglab.westlake.edu.cn/software/smr/)** – Summary-data-based Mendelian randomization for GWAS–QTL integration  
 
@@ -121,7 +111,10 @@ git clone https://github.com/guillermocomesanacimadevila/neurobridge.git
 cd neurobridge/
 ```
 
-4. Run end-to-end!
+## Usage
+
+> [!NOTE]
+> If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
 
 ```bash
 nextflow run main.nf \
@@ -146,3 +139,23 @@ nextflow run workflows/neurobridge/main_<input_method>.nf \
   --pairs assets/ldsc_pairs.tsv \
   --outdir results -resume
 ```
+
+---
+
+## Citations
+
+<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
+<!-- If you use nf-core/mrcope for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
+
+<!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
+
+An extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.
+
+You can cite the `nf-core` publication as follows:
+
+> **The nf-core framework for community-curated bioinformatics pipelines.**
+>
+> Philip Ewels, Alexander Peltzer, Sven Fillinger, Harshil Patel, Johannes Alneberg, Andreas Wilm, Maxime Ulysse Garcia, Paolo Di Tommaso & Sven Nahnsen.
+>
+> _Nat Biotechnol._ 2020 Feb 13. doi: [10.1038/s41587-020-0439-x](https://dx.doi.org/10.1038/s41587-020-0439-x).
+
